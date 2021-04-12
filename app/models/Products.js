@@ -26,5 +26,23 @@ module.exports = {
             if (err) throw err
             res.json({message: 'Update success!'})
         })
+    },
+
+    addProducts: (req, res) => {
+        let data = req.body;
+
+        let sql = 'INSERT INTO products SET?'
+        db.query(sql, [data], (err, response) => {
+            if (err) throw err
+            res.json({message: 'Insert success!'})
+        })
+    },
+
+    deleteProduct: (req, res) => {
+        let sql = 'DELETE FROM products WHERE id = ?'
+        db.query(sql, [req.params.productId], (err, response) => {
+            if (err) throw err
+            res.json({message: 'Delete success!'})
+        })
     }
 }

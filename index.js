@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-let routes = require('./api/config/routes') //importing route
+let routes = require('./app/config/routes') //importing route
 routes(app)
 
 app.use(function(req, res) {
