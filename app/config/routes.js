@@ -5,7 +5,8 @@ module.exports = function(app) {
 
   // route category
   app.route(config.DEFAULT_ROUTE + 'category')
-      .get(ctrl.category.get)
+      .get(ctrl.category.getAllCate)
+      .post(ctrl.category.createCate);
 
   // route products
   app.route(config.DEFAULT_ROUTE + 'products')
